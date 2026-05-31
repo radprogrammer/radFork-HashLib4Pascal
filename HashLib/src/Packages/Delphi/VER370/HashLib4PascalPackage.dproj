@@ -1,0 +1,260 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <Base>True</Base>
+        <AppType>Package</AppType>
+        <Config Condition="'$(Config)'==''">Release</Config>
+        <FrameworkType>None</FrameworkType>
+        <MainSource>HashLib4PascalPackage.dpk</MainSource>
+        <Platform Condition="'$(Platform)'==''">Win32</Platform>
+        <ProjectGuid>{1AD9BAE3-4791-483F-9522-0D47ECBC0795}</ProjectGuid>
+        <ProjectName Condition="'$(ProjectName)'==''">HashLib4PascalPackage</ProjectName>
+        <ProjectVersion>20.4</ProjectVersion>
+        <TargetedPlatforms>3</TargetedPlatforms>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Base)'=='true') or '$(Base_Win32)'!=''">
+        <Base_Win32>true</Base_Win32>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win64' and '$(Base)'=='true') or '$(Base_Win64)'!=''">
+        <Base_Win64>true</Base_Win64>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Release' or '$(Cfg_1)'!=''">
+        <Cfg_1>true</Cfg_1>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Debug' or '$(Cfg_2)'!=''">
+        <Cfg_2>true</Cfg_2>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win64' and '$(Cfg_2)'=='true') or '$(Cfg_2_Win64)'!=''">
+        <Cfg_2_Win64>true</Cfg_2_Win64>
+        <CfgParent>Cfg_2</CfgParent>
+        <Cfg_2>true</Cfg_2>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base)'!=''">
+        <SanitizedProjectName>HashLib4PascalPackage</SanitizedProjectName>
+        <DCC_DcpOutput>.\$(Platform)\$(Config)</DCC_DcpOutput>
+        <DCC_DcuOutput>.\$(Platform)\$(Config)</DCC_DcuOutput>
+        <DCC_ImageBase>00400000</DCC_ImageBase>
+        <DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;$(DCC_Namespace)</DCC_Namespace>
+        <DllSuffix>$(Auto)</DllSuffix>
+        <GenDll>true</GenDll>
+        <GenPackage>true</GenPackage>
+        <RuntimeOnlyPackage>true</RuntimeOnlyPackage>
+        <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=;CFBundleName=</VerInfo_Keys>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Win32)'!=''">
+        <BT_BuildType>Debug</BT_BuildType>
+        <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Win64)'!=''">
+        <BT_BuildType>Debug</BT_BuildType>
+        <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;$(DCC_Namespace)</DCC_Namespace>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1)'!=''">
+        <DCC_DcpOutput>$(BDSUSERDIR)\Imports\$(Platform)</DCC_DcpOutput>
+        <DCC_DcuOutput>$(BDSUSERDIR)\Imports\$(Platform)</DCC_DcuOutput>
+        <DCC_DebugInformation>0</DCC_DebugInformation>
+        <DCC_Define>RELEASE;$(DCC_Define)</DCC_Define>
+        <DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
+        <DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2)'!=''">
+        <DCC_Define>DEBUG;$(DCC_Define)</DCC_Define>
+        <DCC_GenerateStackFrames>true</DCC_GenerateStackFrames>
+        <DCC_IntegerOverflowCheck>true</DCC_IntegerOverflowCheck>
+        <DCC_Optimize>false</DCC_Optimize>
+        <DCC_RangeChecking>true</DCC_RangeChecking>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2_Win64)'!=''">
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+    </PropertyGroup>
+    <ItemGroup>
+        <DelphiCompile Include="$(MainSource)">
+            <MainSource>MainSource</MainSource>
+        </DelphiCompile>
+        <DCCReference Include="rtl.dcp"/>
+        <DCCReference Include="..\..\..\Base\HlpHash.pas"/>
+        <DCCReference Include="..\..\..\Base\HlpKDF.pas"/>
+        <DCCReference Include="..\..\..\Base\HlpHashBuffer.pas"/>
+        <DCCReference Include="..\..\..\Base\HlpHashCryptoNotBuildIn.pas"/>
+        <DCCReference Include="..\..\..\Base\HlpHashFactory.pas"/>
+        <DCCReference Include="..\..\..\Base\HlpHashResult.pas"/>
+        <DCCReference Include="..\..\..\Base\HlpHashRounds.pas"/>
+        <DCCReference Include="..\..\..\Base\HlpHashSize.pas"/>
+        <DCCReference Include="..\..\..\Base\HlpHMACNotBuildInAdapter.pas"/>
+        <DCCReference Include="..\..\..\Base\HlpMultipleTransformNonBlock.pas"/>
+        <DCCReference Include="..\..\..\Checksum\HlpAdler32.pas"/>
+        <DCCReference Include="..\..\..\Checksum\HlpAdler32Dispatch.pas"/>
+        <DCCReference Include="..\..\..\Checksum\HlpCRC.pas"/>
+        <DCCReference Include="..\..\..\Checksum\HlpCRCDispatch.pas"/>
+        <DCCReference Include="..\..\..\Checksum\HlpGF2.pas"/>
+        <DCCReference Include="..\..\..\Checksum\HlpCRC16.pas"/>
+        <DCCReference Include="..\..\..\Checksum\HlpCRC32.pas"/>
+        <DCCReference Include="..\..\..\Checksum\HlpCRC32Fast.pas"/>
+        <DCCReference Include="..\..\..\Checksum\HlpCRC64.pas"/>
+        <DCCReference Include="..\..\..\Crypto\HlpGost.pas"/>
+        <DCCReference Include="..\..\..\Crypto\HlpGrindahl256.pas"/>
+        <DCCReference Include="..\..\..\Crypto\HlpGrindahl512.pas"/>
+        <DCCReference Include="..\..\..\Crypto\HlpHAS160.pas"/>
+        <DCCReference Include="..\..\..\Crypto\HlpHaval.pas"/>
+        <DCCReference Include="..\..\..\Crypto\HlpMD2.pas"/>
+        <DCCReference Include="..\..\..\Crypto\HlpMD4.pas"/>
+        <DCCReference Include="..\..\..\Crypto\HlpMD5.pas"/>
+        <DCCReference Include="..\..\..\Crypto\HlpMDBase.pas"/>
+        <DCCReference Include="..\..\..\Crypto\HlpPanama.pas"/>
+        <DCCReference Include="..\..\..\Crypto\HlpRadioGatun32.pas"/>
+        <DCCReference Include="..\..\..\Crypto\HlpRadioGatun64.pas"/>
+        <DCCReference Include="..\..\..\Crypto\HlpRIPEMD.pas"/>
+        <DCCReference Include="..\..\..\Crypto\HlpRIPEMD128.pas"/>
+        <DCCReference Include="..\..\..\Crypto\HlpRIPEMD160.pas"/>
+        <DCCReference Include="..\..\..\Crypto\HlpRIPEMD256.pas"/>
+        <DCCReference Include="..\..\..\Crypto\HlpRIPEMD320.pas"/>
+        <DCCReference Include="..\..\..\Crypto\HlpSHA0.pas"/>
+        <DCCReference Include="..\..\..\Crypto\HlpSHA1.pas"/>
+        <DCCReference Include="..\..\..\Crypto\HlpSHA1Dispatch.pas"/>
+        <DCCReference Include="..\..\..\Crypto\HlpSHA2_224.pas"/>
+        <DCCReference Include="..\..\..\Crypto\HlpSHA2_256.pas"/>
+        <DCCReference Include="..\..\..\Crypto\HlpSHA2_256Dispatch.pas"/>
+        <DCCReference Include="..\..\..\Crypto\HlpSHA2_512Dispatch.pas"/>
+        <DCCReference Include="..\..\..\Crypto\HlpSHA2_256Base.pas"/>
+        <DCCReference Include="..\..\..\Crypto\HlpSHA2_384.pas"/>
+        <DCCReference Include="..\..\..\Crypto\HlpSHA2_512.pas"/>
+        <DCCReference Include="..\..\..\Crypto\HlpSHA2_512_224.pas"/>
+        <DCCReference Include="..\..\..\Crypto\HlpSHA2_512_256.pas"/>
+        <DCCReference Include="..\..\..\Crypto\HlpSHA2_512Base.pas"/>
+        <DCCReference Include="..\..\..\Crypto\HlpSHA3Dispatch.pas"/>
+        <DCCReference Include="..\..\..\Crypto\HlpSHA3.pas"/>
+        <DCCReference Include="..\..\..\Crypto\HlpSnefru.pas"/>
+        <DCCReference Include="..\..\..\Crypto\HlpTiger.pas"/>
+        <DCCReference Include="..\..\..\Crypto\HlpTiger2.pas"/>
+        <DCCReference Include="..\..\..\Crypto\HlpWhirlPool.pas"/>
+        <DCCReference Include="..\..\..\Crypto\HlpGOST3411_2012.pas"/>
+        <DCCReference Include="..\..\..\Crypto\HlpBlake2BDispatch.pas"/>
+        <DCCReference Include="..\..\..\Crypto\HlpBlake2B.pas"/>
+        <DCCReference Include="..\..\..\Crypto\HlpBlake2SDispatch.pas"/>
+        <DCCReference Include="..\..\..\Crypto\HlpBlake2S.pas"/>
+        <DCCReference Include="..\..\..\Crypto\Blake2BParams\HlpBlake2BParams.pas"/>
+        <DCCReference Include="..\..\..\Crypto\Blake2SParams\HlpBlake2SParams.pas"/>
+        <DCCReference Include="..\..\..\NullDigest\HlpNullDigest.pas"/>
+        <DCCReference Include="..\..\..\Hash32\HlpAP.pas"/>
+        <DCCReference Include="..\..\..\Hash32\HlpBernstein.pas"/>
+        <DCCReference Include="..\..\..\Hash32\HlpBernstein1.pas"/>
+        <DCCReference Include="..\..\..\Hash32\HlpBKDR.pas"/>
+        <DCCReference Include="..\..\..\Hash32\HlpDEK.pas"/>
+        <DCCReference Include="..\..\..\Hash32\HlpDJB.pas"/>
+        <DCCReference Include="..\..\..\Hash32\HlpELF.pas"/>
+        <DCCReference Include="..\..\..\Hash32\HlpFNV.pas"/>
+        <DCCReference Include="..\..\..\Hash32\HlpFNV1a.pas"/>
+        <DCCReference Include="..\..\..\Hash32\HlpJenkins3.pas"/>
+        <DCCReference Include="..\..\..\Hash32\HlpJS.pas"/>
+        <DCCReference Include="..\..\..\Hash32\HlpMurmur2.pas"/>
+        <DCCReference Include="..\..\..\Hash32\HlpMurmurHash3_x86_32.pas"/>
+        <DCCReference Include="..\..\..\Hash32\HlpOneAtTime.pas"/>
+        <DCCReference Include="..\..\..\Hash32\HlpPJW.pas"/>
+        <DCCReference Include="..\..\..\Hash32\HlpRotating.pas"/>
+        <DCCReference Include="..\..\..\Hash32\HlpRS.pas"/>
+        <DCCReference Include="..\..\..\Hash32\HlpSDBM.pas"/>
+        <DCCReference Include="..\..\..\Hash32\HlpShiftAndXor.pas"/>
+        <DCCReference Include="..\..\..\Hash32\HlpSuperFast.pas"/>
+        <DCCReference Include="..\..\..\Hash32\HlpXXHash32.pas"/>
+        <DCCReference Include="..\..\..\Hash64\HlpFNV1a64.pas"/>
+        <DCCReference Include="..\..\..\Hash64\HlpFNV64.pas"/>
+        <DCCReference Include="..\..\..\Hash64\HlpMurmur2_64.pas"/>
+        <DCCReference Include="..\..\..\Hash64\HlpSipHash.pas"/>
+        <DCCReference Include="..\..\..\Hash64\HlpXXHash64.pas"/>
+        <DCCReference Include="..\..\..\Hash64\HlpXXHash3Dispatch.pas"/>
+        <DCCReference Include="..\..\..\Hash64\HlpXXHash3.pas"/>
+        <DCCReference Include="..\..\..\Hash128\HlpMurmurHash3_x86_128.pas"/>
+        <DCCReference Include="..\..\..\Hash128\HlpMurmurHash3_x64_128.pas"/>
+        <DCCReference Include="..\..\..\Hash128\HlpSipHash128.pas"/>
+        <DCCReference Include="..\..\..\Hash128\HlpXXHash128.pas"/>
+        <DCCReference Include="..\..\..\Interfaces\HlpIHash.pas"/>
+        <DCCReference Include="..\..\..\Interfaces\HlpIKDF.pas"/>
+        <DCCReference Include="..\..\..\Interfaces\HlpICRC.pas"/>
+        <DCCReference Include="..\..\..\Interfaces\HlpIHashInfo.pas"/>
+        <DCCReference Include="..\..\..\Interfaces\HlpIHashResult.pas"/>
+        <DCCReference Include="..\..\..\Interfaces\IBlake2BParams\HlpIBlake2BParams.pas"/>
+        <DCCReference Include="..\..\..\Interfaces\IBlake2SParams\HlpIBlake2SParams.pas"/>
+        <DCCReference Include="..\..\..\Crypto\HlpBlake2BP.pas"/>
+        <DCCReference Include="..\..\..\Crypto\HlpBlake2SP.pas"/>
+        <DCCReference Include="..\..\..\Crypto\HlpBlake3Dispatch.pas"/>
+        <DCCReference Include="..\..\..\Crypto\HlpBlake3.pas"/>
+        <DCCReference Include="..\..\..\KDF\HlpPBKDF2_HMACNotBuildInAdapter.pas"/>
+        <DCCReference Include="..\..\..\KDF\HlpPBKDF_Argon2NotBuildInAdapter.pas"/>
+        <DCCReference Include="..\..\..\KDF\HlpArgon2Dispatch.pas"/>
+        <DCCReference Include="..\..\..\KDF\HlpArgon2TypeAndVersion.pas"/>
+        <DCCReference Include="..\..\..\KDF\HlpPBKDF_ScryptNotBuildInAdapter.pas"/>
+        <DCCReference Include="..\..\..\KDF\HlpScryptDispatch.pas"/>
+        <DCCReference Include="..\..\..\Utils\HlpConverters.pas"/>
+        <DCCReference Include="..\..\..\Utils\HlpBitConverter.pas"/>
+        <DCCReference Include="..\..\..\Utils\HlpBits.pas"/>
+        <DCCReference Include="..\..\..\Utils\HlpCpuFeatures.pas"/>
+        <DCCReference Include="..\..\..\Utils\HlpX86SimdFeatures.pas"/>
+        <DCCReference Include="..\..\..\Utils\HlpArmSimdFeatures.pas"/>
+        <DCCReference Include="..\..\..\Utils\HlpSimdLevels.pas"/>
+        <DCCReference Include="..\..\..\Utils\HlpArmHwCapProvider.pas"/>
+        <DCCReference Include="..\..\..\Utils\HlpDarwinSysCtl.pas"/>
+        <DCCReference Include="..\..\..\Utils\HlpHashLibTypes.pas"/>
+        <DCCReference Include="..\..\..\Utils\HlpArrayUtils.pas"/>
+        <BuildConfiguration Include="Base">
+            <Key>Base</Key>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Release">
+            <Key>Cfg_1</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Debug">
+            <Key>Cfg_2</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Delphi.Personality.12</Borland.Personality>
+        <Borland.ProjectType>Package</Borland.ProjectType>
+        <BorlandProject>
+            <Delphi.Personality>
+                <Source>
+                    <Source Name="MainSource">HashLib4PascalPackage.dpk</Source>
+                </Source>
+                <Excluded_Packages/>
+            </Delphi.Personality>
+            <Platforms>
+                <Platform value="Android">False</Platform>
+                <Platform value="Android64">False</Platform>
+                <Platform value="Linux64">False</Platform>
+                <Platform value="OSX32">False</Platform>
+                <Platform value="OSX64">False</Platform>
+                <Platform value="OSXARM64">False</Platform>
+                <Platform value="Win32">True</Platform>
+                <Platform value="Win64">True</Platform>
+                <Platform value="Win64x">False</Platform>
+                <Platform value="WinARM64EC">False</Platform>
+                <Platform value="iOSDevice32">False</Platform>
+                <Platform value="iOSDevice64">False</Platform>
+                <Platform value="iOSSimARM64">False</Platform>
+                <Platform value="iOSSimulator">False</Platform>
+            </Platforms>
+        </BorlandProject>
+        <ProjectFileVersion>12</ProjectFileVersion>
+    </ProjectExtensions>
+    <Import Project="$(BDS)\Bin\CodeGear.Delphi.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Delphi.Targets')"/>
+    <Import Project="$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj" Condition="Exists('$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj')"/>
+    <Import Project="$(MSBuildProjectName).deployproj" Condition="Exists('$(MSBuildProjectName).deployproj')"/>
+</Project>
